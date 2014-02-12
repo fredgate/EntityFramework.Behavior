@@ -75,7 +75,7 @@ namespace EntityFramework.Behavior
 		/// <returns></returns>
 		private IEnumerable<IBehavior> GetBehaviors(Object entity)
 		{
-			throw new NotImplementedException();
+			return entity.GetType().GetCustomAttributes(typeof(BehaviorAttribute), true).Cast<IBehavior>();
 		}
 
 		#endregion
